@@ -64,7 +64,7 @@ class StartFragment : Fragment() {
     private fun orderCupcake(quantity: Int) {
         // Toast.makeText(activity, "Ordered $quantity cupcake(s)", Toast.LENGTH_SHORT).show()
         sharedViewModel.setQuantity(quantity)
-        if (sharedViewModel.hasNoFlavourSet()) {
+        if(sharedViewModel.hasNoFlavourSet()){
             sharedViewModel.setFlavour(getString(R.string.vanilla))
         }
         findNavController().navigate(R.id.action_startFragment_to_flavorFragment)
